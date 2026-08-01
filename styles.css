@@ -598,3 +598,108 @@ body {
         flex-direction: column;
     }
 }
+
+/* =========================================================
+   SISTEMA DE PASES - ESTILOS
+   ========================================================= */
+
+/* Tarjeta de Pases */
+.passes-card {
+    background: linear-gradient(135deg, #1a1200, #2e2000, #1a1200);
+    border: 2px solid var(--accent-gold);
+    border-radius: 18px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-gold), 0 0 30px rgba(212, 168, 67, 0.2);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.passes-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+}
+.passes-icon-box {
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 8px rgba(212, 168, 67, 0.6));
+}
+.passes-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--accent-gold-light);
+    margin-bottom: 8px;
+}
+.passes-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.passes-count {
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--accent-gold);
+    line-height: 1;
+    text-shadow: 0 0 20px rgba(212, 168, 67, 0.5);
+    animation: pulse-gold 2s infinite;
+}
+.passes-sublabel {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 6px;
+}
+
+@keyframes pulse-gold {
+    0%, 100% { text-shadow: 0 0 15px rgba(212, 168, 67, 0.4); }
+    50%       { text-shadow: 0 0 30px rgba(212, 168, 67, 0.9); }
+}
+
+/* Alertas */
+.alert-msg {
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-top: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.alert-danger {
+    background: rgba(180, 30, 30, 0.2);
+    border: 1px solid rgba(220, 50, 50, 0.5);
+    color: #ff8080;
+}
+
+/* Botón Volver */
+.btn-back {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--border-gold);
+    color: var(--text-muted);
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+}
+.btn-back:hover {
+    background: rgba(212, 168, 67, 0.1);
+    color: var(--accent-gold-light);
+    border-color: var(--accent-gold);
+}
+
+/* Clases Utilitarias */
+.mt-15 { margin-top: 15px; }

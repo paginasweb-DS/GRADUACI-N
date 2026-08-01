@@ -176,54 +176,67 @@
             <div class="rsvp-header">
                 <i class="fa-brands fa-whatsapp rsvp-wa-icon"></i>
                 <h2>CONFIRMACIÓN DE ASISTENCIA</h2>
-                <p>Por favor confirma tu presencia para coordinar los honores y recepción. Tu respuesta llegará
-                    directamente a nuestro WhatsApp.</p>
+                <p>Ingresa tu nombre para ver los pases asignados y confirmar tu asistencia por WhatsApp.</p>
             </div>
 
-            <form class="rsvp-form" id="rsvpForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="guestName"><i class="fa-solid fa-user"></i> Tu Nombre y Apellido:</label>
-                        <input type="text" id="guestName" placeholder="Ej: Familia Morales / Juan Pérez" required>
+            <!-- Paso 1: Buscar pases -->
+            <div id="paso1">
+                <div class="form-group">
+                    <label for="guestName"><i class="fa-solid fa-user"></i> Tu Nombre / Familia:</label>
+                    <input type="text" id="guestName" placeholder="Ej: Nombre de cabeza de hogar">
+                </div>
+                <button type="button" class="btn btn-gold w-100 mt-15" id="buscarPasesBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i> Buscar mis Pases
+                </button>
+                <div id="noEncontrado" class="alert-msg alert-danger" style="display:none;">
+                    <i class="fa-solid fa-triangle-exclamation"></i> No se encontró tu nombre en la lista. Verifica cómo fue registrado.
+                </div>
+            </div>
+
+            <!-- Paso 2: Mostrar pases y confirmar -->
+            <div id="paso2" style="display:none;">
+                <div class="passes-card">
+                    <div class="passes-icon-box">
+                        <i class="fa-solid fa-ticket"></i>
+                    </div>
+                    <h3 class="passes-name" id="passesGuestName">Familia López</h3>
+                    <p class="passes-label">Tus pases para la graduación:</p>
+                    <div class="passes-count" id="passesCount">2</div>
+                    <p class="passes-sublabel">pases asignados</p>
+                </div>
+
+                <div class="form-group mt-15">
+                    <label><i class="fa-solid fa-circle-check"></i> ¿Asistirás al Evento?</label>
+                    <div class="radio-options">
+                        <label class="radio-card active">
+                            <input type="radio" name="attendance" value="Si, asistiré con mucho gusto" checked>
+                            <span class="radio-content">
+                                <i class="fa-solid fa-circle-check check-icon"></i>
+                                <strong>¡Sí, ahí estaré!</strong>
+                            </span>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="attendance" value="No podré asistir">
+                            <span class="radio-content">
+                                <i class="fa-solid fa-circle-xmark check-icon"></i>
+                                <strong>No podré asistir</strong>
+                            </span>
+                        </label>
                     </div>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label><i class="fa-solid fa-circle-check"></i> ¿Asistirás al Evento?</label>
-                        <div class="radio-options">
-                            <label class="radio-card active">
-                                <input type="radio" name="attendance" value="Si, asistiré con mucho gusto" checked>
-                                <span class="radio-content">
-                                    <i class="fa-solid fa-circle-check check-icon"></i>
-                                    <strong>¡Sí, ahí estaré!</strong>
-                                </span>
-                            </label>
-                            <label class="radio-card">
-                                <input type="radio" name="attendance" value="No podré asistir">
-                                <span class="radio-content">
-                                    <i class="fa-solid fa-circle-xmark check-icon"></i>
-                                    <strong>No podré asistir</strong>
-                                </span>
-                            </label>
-                        </div>
-                    </div>
+                <div class="form-group mt-15">
+                    <label for="guestMessage"><i class="fa-solid fa-comment-dots"></i> Mensaje para el Soldado (Opcional):</label>
+                    <textarea id="guestMessage" rows="3" placeholder="Escribe un mensaje de orgullo y bendiciones..."></textarea>
                 </div>
 
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="guestMessage"><i class="fa-solid fa-comment-dots"></i> Mensaje de Felicitación para
-                            el Soldado (Opcional):</label>
-                        <textarea id="guestMessage" rows="3"
-                            placeholder="Escribe un mensaje de orgullo y bendiciones para su graduación..."></textarea>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn btn-whatsapp-submit">
+                <button type="button" class="btn btn-whatsapp-submit" id="confirmarBtn">
                     <i class="fa-brands fa-whatsapp"></i> Confirmar Asistencia por WhatsApp
                 </button>
-            </form>
+                <button type="button" class="btn-back" id="volverBtn">
+                    <i class="fa-solid fa-arrow-left"></i> Volver
+                </button>
+            </div>
         </section>
 
         <!-- Footer -->
