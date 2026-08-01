@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduación Militar | Invitación de Honor</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Montserrat:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Fondo dinámico con partículas de estrellas -->
+    <div class="stars-bg"></div>
+
+    <!-- Botón Flotante para Configuración Rápida de Datos -->
+    <button class="config-btn" id="configBtn" title="Configurar datos del evento o teléfono">
+        <i class="fa-solid fa-gear"></i>
+    </button>
+
+    <!-- Modal de Configuración -->
+    <div class="modal" id="configModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-sliders"></i> Personalizar Datos de la Invitación</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <form id="configForm">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-phone"></i> WhatsApp del Anfitrión (con código de país):</label>
+                    <input type="text" id="cfgPhone" value="593983557401" placeholder="Ej: 593991234567 o 521..."
+                        required>
+                    <small>Aquí recibirás los mensajes de confirmación de los invitados.</small>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-user-shield"></i> Nombre del Graduado:</label>
+                    <input type="text" id="cfgSoldier" value="Soldado Alex Gustavo" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-award"></i> Rango / Unidad (Opcional):</label>
+                    <input type="text" id="cfgRank" value="Ejército de Honor - Batallón de Infantería">
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-calendar"></i> Fecha del Evento:</label>
+                    <input type="date" id="cfgDate" value="2026-09-15" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-clock"></i> Hora:</label>
+                    <input type="text" id="cfgTime" value="16:00 HS" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-location-dot"></i> Lugar del Evento:</label>
+                    <input type="text" id="cfgLocation" value="Club Oficiales / Salón de Protocolo, Av. Ejército #123"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-map-location-dot"></i> Link de Google Maps (Opcional):</label>
+                    <input type="url" id="cfgMapLink" value="https://maps.google.com">
+                </div>
+                <button type="submit" class="btn btn-gold w-100"><i class="fa-solid fa-floppy-disk"></i> Guardar
+                    Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contenedor Principal de la Invitación -->
+    <main class="main-container">
+
+        <!-- Header de Honor -->
+        <header class="military-header">
+            <div class="header-badge">
+                <img src="Logo.jpg" alt="Logo Militar" class="header-logo-img">
+            </div>
+            <span class="sub-title"><i class="fa-solid fa-star"></i> HONOR - PATRIA - LEALTAD <i
+                    class="fa-solid fa-star"></i></span>
+            <h1 class="main-title">INVITACIÓN DE HONOR</h1>
+            <p class="ceremony-tag">RECEPCIÓN DE GRADUACIÓN MILITAR</p>
+        </header>
+
+        <!-- Tarjeta Central -->
+        <section class="card-hero">
+            <p class="parents-invitation-text">
+                <i class="fa-solid fa-star gold-star"></i> BYRON Y YOLANDA <i
+                    class="fa-solid fa-star gold-star"></i><br>
+                TIENEN EL HONOR DE INVITAR A LA GRADUACIÓN DE SU HIJO
+            </p>
+
+            <!-- Foto de Cuerpo Completo del Soldado -->
+            <div class="soldier-photo-container">
+                <img src="fondo.jpg" alt="Soldado Graduado" class="soldier-photo">
+            </div>
+
+            <div class="hero-name-box">
+                <!--<span class="rank-label" id="displayRank">NUEVO SOLDADO DE LA REPÚBLICA</span>-->
+                <h2 class="soldier-name" id="displaySoldier"> SLDO CB CRUZ ALEX</h2>
+                <div class="divider-gold">
+                    <!--<span>★</span><span>★</span><span>★</span>-->
+                </div>
+                <p class="honors-quote">
+                    "Con disciplina, coraje y vocación de servicio. Celebramos el inicio de una carrera dedicada al
+                    honor y a la patria."
+                </p>
+            </div>
+        </section>
+
+        <!-- Contador Regresivo -->
+        <section class="countdown-section">
+            <h3 class="section-subtitle"><i class="fa-solid fa-hourglass-half"></i> TIEMPO RESTANTE PARA EL EVENTO</h3>
+            <div class="countdown-grid" id="countdown">
+                <div class="time-card">
+                    <span id="days">00</span>
+                    <label>Días</label>
+                </div>
+                <div class="time-card">
+                    <span id="hours">00</span>
+                    <label>Horas</label>
+                </div>
+                <div class="time-card">
+                    <span id="minutes">00</span>
+                    <label>Minutos</label>
+                </div>
+                <div class="time-card">
+                    <span id="seconds">00</span>
+                    <label>Segundos</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detalles del Evento -->
+        <section class="details-section">
+            <h2 class="section-title"><i class="fa-solid fa-compass"></i> DETALLES DE LA GRADUACIÓN</h2>
+
+            <div class="details-grid">
+                <div class="detail-card">
+                    <div class="icon-box"><i class="fa-solid fa-calendar-day"></i></div>
+                    <h4>FECHA</h4>
+                    <p id="displayDate">15 de Agosto del 2026</p>
+                </div>
+                <div class="detail-card">
+                    <div class="icon-box"><i class="fa-solid fa-clock"></i></div>
+                    <h4>HORA</h4>
+                    <p id="displayTime">18:00 HS</p>
+                </div>
+                <div class="detail-card">
+                    <div class="icon-box"><i class="fa-solid fa-user-tie"></i></div>
+                    <h4>CÓDIGO DE VESTIMENTA</h4>
+                    <p>Formal</p>
+                </div>
+            </div>
+
+            <div class="location-banner">
+                <div class="location-info">
+                    <i class="fa-solid fa-location-dot loc-icon"></i>
+                    <div>
+                        <h4>LUGAR Y RECEPCIÓN</h4>
+                        <p id="displayLocation">Zabala, Carpinteros y Alondras N2287</p>
+                    </div>
+                </div>
+                <a href="https://maps.app.goo.gl/rzNgVE5jYWzSFcsK9" target="_blank" id="displayMapBtn"
+                    class="btn btn-outline">
+                    <i class="fa-solid fa-map-pin"></i> Ver Ubicación en Google Maps
+                </a>
+            </div>
+        </section>
+
+        <!-- Formulario de Confirmación (RSVP) -->
+        <section class="rsvp-section" id="rsvp">
+            <div class="rsvp-header">
+                <i class="fa-brands fa-whatsapp rsvp-wa-icon"></i>
+                <h2>CONFIRMACIÓN DE ASISTENCIA</h2>
+                <p>Por favor confirma tu presencia para coordinar los honores y recepción. Tu respuesta llegará
+                    directamente a nuestro WhatsApp.</p>
+            </div>
+
+            <form class="rsvp-form" id="rsvpForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="guestName"><i class="fa-solid fa-user"></i> Tu Nombre y Apellido:</label>
+                        <input type="text" id="guestName" placeholder="Ej: Familia Morales / Juan Pérez" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-circle-check"></i> ¿Asistirás al Evento?</label>
+                        <div class="radio-options">
+                            <label class="radio-card active">
+                                <input type="radio" name="attendance" value="Si, asistiré con mucho gusto" checked>
+                                <span class="radio-content">
+                                    <i class="fa-solid fa-circle-check check-icon"></i>
+                                    <strong>¡Sí, ahí estaré!</strong>
+                                </span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="attendance" value="No podré asistir">
+                                <span class="radio-content">
+                                    <i class="fa-solid fa-circle-xmark check-icon"></i>
+                                    <strong>No podré asistir</strong>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="guestMessage"><i class="fa-solid fa-comment-dots"></i> Mensaje de Felicitación para
+                            el Soldado (Opcional):</label>
+                        <textarea id="guestMessage" rows="3"
+                            placeholder="Escribe un mensaje de orgullo y bendiciones para su graduación..."></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-whatsapp-submit">
+                    <i class="fa-brands fa-whatsapp"></i> Confirmar Asistencia por WhatsApp
+                </button>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer class="military-footer">
+
+            <p>¡Esperamos contar con tu valiosa presencia en este día tan especial para nuestra familia!</p>
+            <small>© 2026 - Celebración de Graduación Militar</small>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
