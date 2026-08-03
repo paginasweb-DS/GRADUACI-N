@@ -15,6 +15,7 @@ const guestsList = [
     { searchKey: 'Diego Collaguazo',    displayName: 'Sr. Diego Collaguazo y familia',    passes: 4 },
     { searchKey: 'Abigail Bravo',       displayName: 'Srta. Abigail Bravo e hijo',        passes: 2 },
     { searchKey: 'Karen Villacís',      displayName: 'Srta. Karen Villacís',              passes: 1 },
+    { searchKey: 'Alexandra Villacís',  displayName: 'Sra. Alexandra Villacís y familia', passes: 3 },
     { searchKey: 'Joel Cadena',         displayName: 'Sr. Joel Cadena',                   passes: 1 },
     { searchKey: 'Paul Morocho',        displayName: 'Sr. Paul Morocho',                  passes: 1 },
     { searchKey: 'Ariel Chamorro',      displayName: 'Sr. Ariel Chamorro',                passes: 1 },
