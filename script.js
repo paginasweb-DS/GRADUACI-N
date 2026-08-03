@@ -20,6 +20,8 @@ const guestsList = [
     { searchKey: 'Paul Morocho',        displayName: 'Sr. Paul Morocho',                  passes: 1 },
     { searchKey: 'Ariel Chamorro',      displayName: 'Sr. Ariel Chamorro',                passes: 1 },
     { searchKey: 'Teresa Puente',       displayName: 'Sra. Teresa Puente',                passes: 1 },
+    { searchKey: 'Bolívar Herrera',     displayName: 'Sr. Bolívar Herrera',               passes: 1 },
+    { searchKey: 'Perla Sanmartín',     displayName: 'Srta. Perla Sanmartín',             passes: 1 },
 ];
 
 // =========================================================
